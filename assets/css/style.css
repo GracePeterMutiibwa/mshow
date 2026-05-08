@@ -1,6 +1,3 @@
-/* ============================================================
-   CSS CUSTOM PROPERTIES
-============================================================ */
 :root {
   --accent:        #FE3C00;
   --accent-light:  #FF6B3D;
@@ -59,9 +56,7 @@
   --syn-op:       #475569;
 }
 
-/* ============================================================
-   RESET & BASE
-============================================================ */
+ 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
@@ -108,16 +103,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--text-primary);
 }
 
-/* ============================================================
-   ACCENT TEXT (replaces gradient)
-============================================================ */
+
 .accent-text {
   color: var(--brand-color);
 }
 
-/* ============================================================
-   NAVIGATION
-============================================================ */
+
 .nav-wrap {
   position: sticky;
   top: 0;
@@ -144,7 +135,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .nav-brand .brand-icon { opacity: 0.85; }
 
-/* Desktop nav links */
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -219,9 +210,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ============================================================
-   MOBILE SIDEBAR
-============================================================ */
+
 .sidebar-overlay {
   display: none;
   position: fixed;
@@ -439,9 +428,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero-version { font-size: 0.8rem; color: var(--text-dim); }
 .hero-version code { font-size: 0.78rem; }
 
-/* ============================================================
-   HERO VISUAL
-============================================================ */
+
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -455,7 +442,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 
-/* Placeholder SVG -- replace with your custom illustration */
 .hero-placeholder-svg {
   width: 100%;
   max-width: 520px;
@@ -465,9 +451,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: block;
 }
 
-/* ============================================================
-   FEATURES
-============================================================ */
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -507,9 +491,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.65;
 }
 
-/* ============================================================
-   HOW IT WORKS
-============================================================ */
+
 .steps { display: flex; flex-direction: column; margin-top: 48px; }
 .step {
   display: grid;
@@ -567,9 +549,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 100%;
 }
 
-/* ============================================================
-   SYNTAX TOKENS
-============================================================ */
+
 .t-key     { color: var(--accent-light); }
 .t-str     { color: var(--syn-str); }
 .t-kw      { color: var(--syn-key); }
@@ -582,9 +562,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .t-brace   { color: var(--text-muted); }
 .t-bracket { color: #94a3b8; }
 
-/* ============================================================
-   TABS / CODE SECTION
-============================================================ */
+
 .tabs-wrap {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -644,9 +622,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .code-caption a { color: var(--accent-light); text-decoration: underline; text-underline-offset: 3px; }
 .code-caption code { font-size: 0.8em; }
 
-/* ============================================================
-   MOLD CALLOUT
-============================================================ */
+
 .mold-callout {
   display: flex;
   align-items: center;
@@ -667,9 +643,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-shrink: 0;
 }
 
-/* ============================================================
-   INSTALL GRID
-============================================================ */
+
 .install-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -709,9 +683,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .download-pair { display: flex; gap: 8px; flex-wrap: wrap; }
 .dim-text { color: var(--text-dim) !important; font-size: 0.82rem !important; }
 
-/* ============================================================
-   BIO
-============================================================ */
+
 .bio-card {
   display: flex;
   align-items: flex-start;
@@ -759,9 +731,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .bio-link:hover { color: var(--text-primary); border-color: var(--border-hover); background: var(--bg-raised); }
 
-/* ============================================================
-   FOOTER
-============================================================ */
+
+
 .footer { border-top: 1px solid var(--border); padding: 40px 0; }
 .footer-inner {
   display: flex;
@@ -782,9 +753,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-links a:hover { color: var(--text-primary); }
 .footer-copy { font-size: 0.8rem; color: var(--text-dim); }
 
-/* ============================================================
-   SCROLL REVEAL
-============================================================ */
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -792,9 +761,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ============================================================
-   RESPONSIVE
-============================================================ */
+
 @media (max-width: 1024px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .install-grid  { grid-template-columns: repeat(2, 1fr); }

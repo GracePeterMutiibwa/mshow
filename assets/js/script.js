@@ -1,8 +1,5 @@
-/* ============================================================
-   THEME TOGGLE
-============================================================ */
-const html      = document.documentElement;
-const themeBtn  = document.getElementById('themeToggle');
+const html = document.documentElement;
+const themeBtn = document.getElementById('themeToggle');
 const THEME_KEY = 'moldo-theme';
 
 function applyTheme(theme) {
@@ -11,7 +8,7 @@ function applyTheme(theme) {
 }
 
 (function initTheme() {
-  const saved  = localStorage.getItem(THEME_KEY);
+  const saved = localStorage.getItem(THEME_KEY);
   const system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   applyTheme(saved || system);
 })();
@@ -20,13 +17,11 @@ themeBtn.addEventListener('click', () => {
   applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 });
 
-/* ============================================================
-   MOBILE SIDEBAR
-============================================================ */
-const menuBtn        = document.getElementById('menuToggle');
-const sidebar        = document.getElementById('navSidebar');
-const overlay        = document.getElementById('sidebarOverlay');
-const sidebarClose   = document.getElementById('sidebarClose');
+
+const menuBtn = document.getElementById('menuToggle');
+const sidebar = document.getElementById('navSidebar');
+const overlay = document.getElementById('sidebarOverlay');
+const sidebarClose = document.getElementById('sidebarClose');
 
 function openSidebar() {
   sidebar.classList.add('open');
@@ -51,21 +46,19 @@ menuBtn.addEventListener('click', () => {
 sidebarClose.addEventListener('click', closeSidebar);
 overlay.addEventListener('click', closeSidebar);
 
-/* Close on Escape */
+
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeSidebar();
 });
 
-/* Close when a sidebar link is clicked */
+
 sidebar.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', closeSidebar);
 });
 
-/* ============================================================
-   TABS
-============================================================ */
+
 document.querySelectorAll('.tabs').forEach(tabGroup => {
-  const tabs   = tabGroup.querySelectorAll('.tab');
+  const tabs = tabGroup.querySelectorAll('.tab');
   const panels = tabGroup.closest('.tabs-wrap').querySelectorAll('.tab-panel');
 
   tabs.forEach(tab => {
@@ -102,14 +95,12 @@ const revealObserver = new IntersectionObserver(
 );
 revealEls.forEach(el => revealObserver.observe(el));
 
-/* ============================================================
-   OS DETECTION -- float matching download button first
-============================================================ */
+
 (function detectOS() {
   const ua = navigator.userAgent.toLowerCase();
   let detected = null;
-  if      (ua.includes('win'))   detected = 'windows';
-  else if (ua.includes('mac'))   detected = 'macos';
+  if (ua.includes('win')) detected = 'windows';
+  else if (ua.includes('mac')) detected = 'macos';
   else if (ua.includes('linux')) detected = 'linux';
   if (!detected) return;
   document.querySelectorAll('.download-btn').forEach(btn => {
@@ -117,10 +108,8 @@ revealEls.forEach(el => revealObserver.observe(el));
   });
 })();
 
-/* ============================================================
-   ACTIVE NAV HIGHLIGHT on scroll
-============================================================ */
-const sections   = document.querySelectorAll('section[id]');
+
+const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
 const sectionObserver = new IntersectionObserver(
