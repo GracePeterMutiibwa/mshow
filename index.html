@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moldo | Visual Programming Built on Python</title>
+    <meta
+      name="description"
+      content="Moldo is a block-based visual programming language for learners ages 8 to 19, built on Python. Extensible via molds."
+    />
+    <meta property="og:title" content="Moldo" />
+    <meta
+      property="og:description"
+      content="Visual programming built on Python. Block-based. Extensible."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header class="nav-wrap">
+      <nav class="nav">
+        <a href="#" class="nav-brand" aria-label="Moldo home">
+          <svg
+            class="brand-icon"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <rect
+              x="2"
+              y="6"
+              width="4"
+              height="12"
+              rx="1"
+              fill="currentColor"
+            />
+            <rect
+              x="8"
+              y="2"
+              width="4"
+              height="16"
+              rx="1"
+              fill="currentColor"
+            />
+            <rect
+              x="14"
+              y="6"
+              width="4"
+              height="12"
+              rx="1"
+              fill="currentColor"
+            />
+            <rect
+              x="20"
+              y="8"
+              width="2"
+              height="8"
+              rx="1"
+              fill="currentColor"
+              opacity=".5"
+            />
+          </svg>
+          <span class="brand-name excalidraw-font">moldo</span>
+        </a>
+
+        <div class="nav-links" id="navSidebar">
+          <div class="sidebar-header">
+            <span class="excalidraw-font sidebar-brand">moldo</span>
+            <button
+              class="sidebar-close"
+              id="sidebarClose"
+              aria-label="Close menu"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#developer">For developers</a>
+          <a href="#bio">About</a>
+          <a
+            href="https://github.com/GracePeterMutiibwa/moldo"
+            target="_blank"
+            rel="noopener"
+            class="pill-outline"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              />
+            </svg>
+            GitHub
+          </a>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle colour theme"
+          >
+            <svg
+              class="icon-sun"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg
+              class="icon-moon"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <span class="toggle-label">Switch theme</span>
+          </button>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Open source &middot; MIT License
+        </div>
+
+        <h1 class="hero-headline">
+          Visual programming<br />
+          <span class="accent-text">built on Python.</span>
+        </h1>
+
+        <p class="hero-sub">
+          <span class="excalidraw-font hero-moldo-name">Moldo</span> lets
+          learners aged 8 to 19 build real programs by connecting flowchart
+          blocks. Every block compiles to valid Python. No syntactic barrier. No
+          dead ends.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#" class="btn btn-primary download-btn" data-os="windows">
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"
+              />
+            </svg>
+            Download for Windows
+          </a>
+
+          <a href="#" class="btn btn-ghost download-btn" data-os="macos">
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"
+              />
+            </svg>
+            Download for macOS
+          </a>
+          <!-- LINUX DOWNLOAD -- comment out if not needed -->
+          <a href="#" class="btn btn-ghost download-btn" data-os="linux">
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12.504 0C6.065 0 0 5.986 0 12.51A12.504 12.504 0 0 0 12.504 25.014 12.504 12.504 0 0 0 25.008 12.51C25.008 5.986 18.943 0 12.504 0zm0 2.4c5.582 0 10.11 4.53 10.11 10.11s-4.528 10.11-10.11 10.11S2.394 18.09 2.394 12.51 6.922 2.4 12.504 2.4zm-1.44 4.19-.44 1.7-.43-.11c-1.38-.36-2.61.12-3.17 1.17-.56 1.05-.28 2.53 1 3.75.49.47.98.94 1.18 1.44.19.48.15.98-.07 1.56l-.7 1.97-1.78-.63.67-1.88c.11-.31.11-.57.02-.8-.11-.27-.42-.6-.87-1.02-1.7-1.62-2.1-3.77-1.21-5.44.89-1.67 2.74-2.4 4.82-1.78zM14 6.74l.7 1.88c.11.31.11.57.02.8-.11.27-.42.6-.87 1.02-1.7 1.62-2.1 3.77-1.21 5.44.89 1.67 2.74 2.4 4.82 1.78l.44-1.77.43.11c1.38.36 2.61-.12 3.17-1.17.56-1.05.28-2.53-1-3.75-.49-.47-.98-.94-1.18-1.44-.19-.48-.15-.98.07-1.56l.7-1.97 1.78.63-.67 1.88c-.11.31-.11.57-.02.8.11.27.42.6.87 1.02 1.7 1.62 2.1 3.77 1.21 5.44-.89 1.67-2.74 2.4-4.82 1.78v6.17l-1.91.001V13.5z"
+              />
+            </svg>
+            Download for Linux
+          </a>
+          <a
+            href="https://github.com/GracePeterMutiibwa/moldo"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-text"
+          >
+            View on GitHub
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+        </div>
+
+        <p class="hero-version">
+          Alpha &middot; v0.5.0 &middot; <code>pip install moldo</code>
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <img
+          src="./assets/images/hero-visual.svg"
+          draggable="false"
+          alt="Visual"
+        />
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-label">Features</div>
+        <h2 class="section-title">
+          Everything a learner needs.<br />Everything a developer wants.
+        </h2>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-check">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h3>Visual, not simplified</h3>
+            <p>
+              Every block corresponds precisely to a Python construct. Learners
+              acquire real programming knowledge through the visual interface.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-check">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h3>Real Python output</h3>
+            <p>
+              The visual program compiles to executable Python via a JSON
+              program tree. No custom runtime, no lock-in, just Python.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-check">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h3>Extensible via Molds</h3>
+            <p>
+              Ship new block types as <code>.zip.mold</code> packages. Install
+              with one click. No editor restart. No source modification.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-check">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h3>Instant feedback</h3>
+            <p>
+              Nodes highlight in execution order as your program runs. Errors
+              pinpoint the failing block. No guessing.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-check">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h3>7 built-in molds</h3>
+            <p>
+              Variables, I/O, Control, Math, Text, Collections, Functions. 31
+              block types out of the box covering all core programming concepts.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-check">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h3>Local-first and cross-platform</h3>
+            <p>
+              All programs live on your machine. Runs on Windows, macOS, and
+              Linux. No account, no cloud, no subscription.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="how-it-works">
+      <div class="container">
+        <div class="section-label">How it works</div>
+        <h2 class="section-title">From blocks to Python in three steps.</h2>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h3>Build visually</h3>
+              <p>
+                Drag blocks from the sidebar onto the canvas. Connect them with
+                edges. Configure each block's parameters in the auto-generated
+                settings panel.
+              </p>
+            </div>
+            <div class="step-visual">
+              <div class="step-nodes" aria-hidden="true">
+                <div class="mini-node">
+                  Declare Variable<br /><small>score = int(0)</small>
+                </div>
+                <div class="step-arrow">&#8594;</div>
+                <div class="mini-node">Print<br /><small>@score</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h3>Compile to JSON</h3>
+              <p>
+                The editor compiles your canvas to a JSON program tree, a
+                structured representation of your program that the backend can
+                walk and translate to Python.
+              </p>
+            </div>
+            <div class="step-visual">
+              <pre class="mini-code"><code><span class="t-brace">{</span>
+  <span class="t-key">"mold"</span><span class="t-colon">:</span> <span class="t-str">"variables"</span>,
+  <span class="t-key">"block"</span><span class="t-colon">:</span> <span class="t-str">"declare"</span>,
+  <span class="t-key">"params"</span><span class="t-colon">:</span> <span class="t-brace">{</span>
+    <span class="t-key">"name"</span><span class="t-colon">:</span> <span class="t-str">"score"</span>,
+    <span class="t-key">"dataType"</span><span class="t-colon">:</span> <span class="t-str">"int"</span>,
+    <span class="t-key">"value"</span><span class="t-colon">:</span> <span class="t-str">"0"</span>
+  <span class="t-brace">}</span>,
+  <span class="t-key">"next"</span><span class="t-colon">:</span> <span class="t-brace">{</span> <span class="t-comment">...</span> <span class="t-brace">}</span>
+<span class="t-brace">}</span></code></pre>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h3>Execute as Python</h3>
+              <p>
+                The Moldo backend transpiles the JSON tree to Python source,
+                runs it, and streams stdout and a node-highlight sequence back
+                to the editor.
+              </p>
+            </div>
+            <div class="step-visual">
+              <pre
+                class="mini-code"
+              ><code><span class="t-keyword">score</span> <span class="t-op">=</span> <span class="t-fn">int</span>(<span class="t-num">0</span>)
+<span class="t-keyword">for</span> i <span class="t-keyword">in</span> <span class="t-fn">range</span>(<span class="t-num">1</span>, <span class="t-num">11</span>, <span class="t-num">1</span>):
+    score <span class="t-op">=</span> score <span class="t-op">+</span> i
+<span class="t-fn">print</span>(score)
+<span class="t-comment"># Output: 55</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="developer">
+      <div class="container">
+        <div class="section-label">For Developers</div>
+        <h2 class="section-title">Extend Moldo with your own blocks.</h2>
+        <p class="section-sub">
+          A mold is a <code>.zip.mold</code> file containing a JSON manifest and
+          a Python package. Define your blocks in JSON, implement them in
+          Python, and publish as a GitHub Release. Users install with one click,
+          no restart required.
+        </p>
+
+        <div class="tabs-wrap">
+          <div class="tabs" role="tablist">
+            <button
+              class="tab active"
+              data-tab="manifest"
+              role="tab"
+              aria-selected="true"
+            >
+              moldo.json
+            </button>
+            <button
+              class="tab"
+              data-tab="python"
+              role="tab"
+              aria-selected="false"
+            >
+              Python handler
+            </button>
+            <button class="tab" data-tab="api" role="tab" aria-selected="false">
+              Install API
+            </button>
+            <button
+              class="tab"
+              data-tab="structure"
+              role="tab"
+              aria-selected="false"
+            >
+              Mold structure
+            </button>
+          </div>
+
+          <div class="tab-panels">
+            <!-- MANIFEST TAB -->
+            <div class="tab-panel active" id="panel-manifest" role="tabpanel">
+              <pre class="code-block"><code><span class="t-brace">{</span>
+  <span class="t-key">"name"</span><span class="t-colon">:</span> <span class="t-str">"webscraper"</span>,
+  <span class="t-key">"displayName"</span><span class="t-colon">:</span> <span class="t-str">"Web Scraper"</span>,
+  <span class="t-key">"version"</span><span class="t-colon">:</span> <span class="t-str">"1.0.0"</span>,
+  <span class="t-key">"author"</span><span class="t-colon">:</span> <span class="t-str">"Your Name"</span>,
+  <span class="t-key">"description"</span><span class="t-colon">:</span> <span class="t-str">"Fetch and extract content from web pages."</span>,
+  <span class="t-key">"moldoMinVersion"</span><span class="t-colon">:</span> <span class="t-str">"0.5.0"</span>,
+  <span class="t-key">"isCore"</span><span class="t-colon">:</span> <span class="t-kw">false</span>,
+  <span class="t-key">"blocks"</span><span class="t-colon">:</span> <span class="t-bracket">[</span>
+    <span class="t-brace">{</span>
+      <span class="t-key">"id"</span><span class="t-colon">:</span> <span class="t-str">"fetch"</span>,
+      <span class="t-key">"name"</span><span class="t-colon">:</span> <span class="t-str">"Fetch Page"</span>,
+      <span class="t-key">"nodeType"</span><span class="t-colon">:</span> <span class="t-str">"process"</span>,
+      <span class="t-key">"nodeShape"</span><span class="t-colon">:</span> <span class="t-str">"rect"</span>,
+      <span class="t-key">"color"</span><span class="t-colon">:</span> <span class="t-str">"amber"</span>,
+      <span class="t-key">"icon"</span><span class="t-colon">:</span> <span class="t-str">"globe"</span>,
+      <span class="t-key">"pythonCall"</span><span class="t-colon">:</span> <span class="t-str">"webscraper.fetch_page"</span>,
+      <span class="t-key">"inputs"</span><span class="t-colon">:</span> <span class="t-bracket">[</span>
+        <span class="t-brace">{</span>
+          <span class="t-key">"id"</span><span class="t-colon">:</span> <span class="t-str">"url"</span>,
+          <span class="t-key">"label"</span><span class="t-colon">:</span> <span class="t-str">"URL"</span>,
+          <span class="t-key">"type"</span><span class="t-colon">:</span> <span class="t-str">"text"</span>,
+          <span class="t-key">"placeholder"</span><span class="t-colon">:</span> <span class="t-str">"https://example.com"</span>
+        <span class="t-brace">}</span>
+      <span class="t-bracket">]</span>,
+      <span class="t-key">"outputs"</span><span class="t-colon">:</span> <span class="t-bracket">[</span>
+        <span class="t-brace">{</span> <span class="t-key">"id"</span><span class="t-colon">:</span> <span class="t-str">"result"</span>, <span class="t-key">"label"</span><span class="t-colon">:</span> <span class="t-str">"Save result to"</span>, <span class="t-key">"type"</span><span class="t-colon">:</span> <span class="t-str">"variable"</span> <span class="t-brace">}</span>
+      <span class="t-bracket">]</span>
+    <span class="t-brace">}</span>
+  <span class="t-bracket">]</span>
+<span class="t-brace">}</span></code></pre>
+              <p class="code-caption">
+                The manifest defines your block's appearance, inputs, and which
+                Python function to call. The editor auto-generates the settings
+                UI from <code>inputs[]</code>. No UI code needed.
+              </p>
+            </div>
+
+            <!-- PYTHON TAB -->
+            <div class="tab-panel" id="panel-python" role="tabpanel" hidden>
+              <pre
+                class="code-block"
+              ><code><span class="t-comment"># webscraper/__init__.py</span>
+
+<span class="t-keyword">import</span> urllib.request
+<span class="t-keyword">import</span> re
+
+<span class="t-keyword">def</span> <span class="t-fn">fetch_page</span>(url: <span class="t-str">str</span>) <span class="t-op">-&gt;</span> <span class="t-str">str</span>:
+    <span class="t-str">"""Fetch a URL and return the plain text content."""</span>
+    <span class="t-keyword">with</span> urllib.request.<span class="t-fn">urlopen</span>(url) <span class="t-keyword">as</span> res:
+        html <span class="t-op">=</span> res.<span class="t-fn">read</span>().<span class="t-fn">decode</span>()
+    text <span class="t-op">=</span> re.<span class="t-fn">sub</span>(<span class="t-str">r'&lt;[^&gt;]+&gt;'</span>, <span class="t-str">''</span>, html)
+    <span class="t-keyword">return</span> <span class="t-str">' '</span>.<span class="t-fn">join</span>(text.<span class="t-fn">split</span>())
+
+<span class="t-comment"># Moldo calls fetch_page(url=...) and assigns the</span>
+<span class="t-comment"># return value to the variable the learner named.</span></code></pre>
+              <p class="code-caption">
+                Write a regular Python function. Moldo resolves
+                <code>pythonCall</code> at runtime and generates
+                <code>result = webscraper.fetch_page(url=...)</code> in the
+                compiled output.
+              </p>
+            </div>
+
+            <!-- API TAB -->
+            <div class="tab-panel" id="panel-api" role="tabpanel" hidden>
+              <pre
+                class="code-block"
+              ><code><span class="t-comment"># Pack your mold</span>
+zip -r webscraper.zip.mold \
+    moldo.json requirements.txt webscraper/
+
+<span class="t-comment"># Install via the REST API</span>
+curl -X POST http://127.0.0.1:8000/molds/install \
+     -F <span class="t-str">"file=@webscraper.zip.mold"</span>
+
+<span class="t-comment"># List installed molds</span>
+curl http://127.0.0.1:8000/molds
+
+<span class="t-comment"># Uninstall</span>
+curl -X DELETE http://127.0.0.1:8000/molds/webscraper
+
+<span class="t-comment"># Or use the editor toolbar.</span>
+<span class="t-comment"># Upload the .zip.mold file, no restart required.</span></code></pre>
+              <p class="code-caption">
+                The REST API is the same one the editor uses internally.
+                Automate mold deployment in CI, or distribute via GitHub
+                Releases for one-click install from the editor.
+              </p>
+            </div>
+
+            <!-- STRUCTURE TAB -->
+            <div class="tab-panel" id="panel-structure" role="tabpanel" hidden>
+              <pre class="code-block"><code>webscraper.zip.mold
+<span class="t-comment">|-- moldo.json          # Block definitions (required)</span>
+<span class="t-comment">|-- webscraper/         # Python package (required)</span>
+<span class="t-comment">|   |-- __init__.py     # Contains your callables</span>
+<span class="t-comment">|   `-- helpers.py      # Supporting code</span>
+<span class="t-comment">`-- requirements.txt    # pip deps (optional)</span>
+
+<span class="t-comment"># Input field types available in moldo.json:</span>
+<span class="t-comment">#   text, number, select, checkbox, variable</span>
+
+<span class="t-comment"># Node shapes:</span>
+<span class="t-comment">#   rect (process), diamond (decision), circle (terminal)</span>
+
+<span class="t-comment"># Publish on GitHub Releases as a .zip.mold asset.</span>
+<span class="t-comment"># Learners install it directly from the editor toolbar.</span></code></pre>
+              <p class="code-caption">
+                The starter template is in the
+                <a
+                  href="https://github.com/GracePeterMutiibwa/moldo/tree/main/mold-template"
+                  target="_blank"
+                  rel="noopener"
+                  >mold-template/</a
+                >
+                folder. Clone it, rename the package, implement your functions,
+                and ship.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mold-callout">
+          <div class="mold-callout-text">
+            <h3>Build for your domain.</h3>
+            <p>
+              A biology teacher can add cell-simulation blocks. A geography
+              teacher can add climate-data blocks. Any Python developer can
+              extend Moldo for any domain without touching the core system.
+            </p>
+          </div>
+          <div class="mold-callout-actions">
+            <a
+              href="https://github.com/GracePeterMutiibwa/moldo/tree/main/mold-template"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+            >
+              Get the mold template
+            </a>
+            <a
+              href="https://github.com/GracePeterMutiibwa/moldo"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+            >
+              Read the docs
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-label">Get started</div>
+        <h2 class="section-title">Up and running in 30 seconds.</h2>
+
+        <div class="install-grid">
+          <div class="install-card">
+            <div class="install-step-num">1</div>
+            <h3>Install the backend</h3>
+            <pre
+              class="mini-code-inline"
+            ><code><span class="t-fn">pip</span> install moldo
+<span class="t-fn">moldo</span> serve</code></pre>
+            <p>The runtime starts at <code>http://127.0.0.1:8000</code>.</p>
+          </div>
+
+          <div class="install-card">
+            <div class="install-step-num">2</div>
+            <h3>Launch the editor</h3>
+            <div class="download-pair">
+              <a href="#" class="btn btn-primary btn-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"
+                  />
+                </svg>
+                Windows
+              </a>
+
+              <a href="#" class="btn btn-ghost btn-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM14 8.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                  />
+                </svg>
+                macOS
+              </a>
+
+              <a href="#" class="btn btn-ghost btn-sm">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12.504 0C6.065 0 0 5.986 0 12.51A12.504 12.504 0 0 0 12.504 25.014 12.504 12.504 0 0 0 25.008 12.51C25.008 5.986 18.943 0 12.504 0zm0 2.4c5.582 0 10.11 4.53 10.11 10.11s-4.528 10.11-10.11 10.11S2.394 18.09 2.394 12.51 6.922 2.4 12.504 2.4z"
+                  />
+                </svg>
+                Linux
+              </a>
+            </div>
+            <p>Green dot in the toolbar = backend connected.</p>
+          </div>
+
+          <div class="install-card">
+            <div class="install-step-num">3</div>
+            <h3>Start building</h3>
+            <p>
+              Drag a <em>Declare Variable</em> block onto the canvas. Add a
+              <em>Print</em> block. Connect them. Hit Run.
+            </p>
+            <p class="dim-text">That's Hello World in Moldo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bio">
+      <div class="container">
+        <div class="section-label">About the author</div>
+        <div class="bio-card">
+          <img
+            class="bio-avatar"
+            src="https://assets.clearnique.com/static/served/ref/founder_.jpg"
+            alt="Grace Peter Mutiibwa"
+            width="88"
+            height="88"
+          />
+          <div class="bio-text">
+            <h2 class="bio-name">Grace Peter Mutiibwa</h2>
+            <p class="bio-title">
+              Software Engineering Student &middot; Founder Clearnique
+            </p>
+            <p class="bio-desc">
+              Moldo is an attempt to lower the barrier to programming education
+              for learners by bridging block-based and text-based programming.
+            </p>
+            <div class="bio-links">
+              <a
+                href="https://github.com/GracePeterMutiibwa"
+                target="_blank"
+                rel="noopener"
+                class="bio-link"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  />
+                </svg>
+                GitHub
+              </a>
+              <a
+                href="https://gracepeter.clearnique.com"
+                target="_blank"
+                rel="noopener"
+                class="bio-link"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  />
+                </svg>
+                gracepeter.clearnique.com
+              </a>
+              <a href="mailto:gracepeter@clearnique.com" class="bio-link">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <svg
+            class="brand-icon"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <rect
+              x="2"
+              y="6"
+              width="4"
+              height="12"
+              rx="1"
+              fill="currentColor"
+            />
+            <rect
+              x="8"
+              y="2"
+              width="4"
+              height="16"
+              rx="1"
+              fill="currentColor"
+            />
+            <rect
+              x="14"
+              y="6"
+              width="4"
+              height="12"
+              rx="1"
+              fill="currentColor"
+            />
+            <rect
+              x="20"
+              y="8"
+              width="2"
+              height="8"
+              rx="1"
+              fill="currentColor"
+              opacity=".5"
+            />
+          </svg>
+          <span class="excalidraw-font">moldo</span>
+        </div>
+        <div class="footer-links">
+          <a
+            href="https://github.com/GracePeterMutiibwa/moldo"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://github.com/GracePeterMutiibwa/moldo/tree/main/docs"
+            target="_blank"
+            rel="noopener"
+            >Docs</a
+          >
+          <a
+            href="https://github.com/GracePeterMutiibwa/moldo/tree/main/mold-template"
+            target="_blank"
+            rel="noopener"
+            >Mold template</a
+          >
+          <a
+            href="https://github.com/GracePeterMutiibwa/moldo/issues"
+            target="_blank"
+            rel="noopener"
+            >Report issue</a
+          >
+        </div>
+        <p class="footer-copy">
+          All rights reserved &copy; Grace Peter Mutiibwa &middot; 2026
+        </p>
+      </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
